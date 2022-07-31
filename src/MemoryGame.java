@@ -1,19 +1,22 @@
+import Controller.GameController;
 import View.Graphic;
-import Controller.GameEngine;
-import View.Graphic;
+import View.GameView;
 
 import java.io.FileNotFoundException;
+import java.util.Map;
 
 public class MemoryGame {
     public static void main(String[] args) throws FileNotFoundException {
 
-        Graphic graphic = new Graphic();
-        graphic.printBoardEasyMode();
-        GameEngine gameEngine=new GameEngine();
-        gameEngine.printBoardEasyMode();
-        gameEngine.generatorWords();
-        gameEngine.randomWords();
-        gameEngine.;
+
+       GameController gameController=new GameController();
+        gameController.initialBoard();
+        int move=2;
+        for(int i=0;i<move;i++) {
+            gameController.firstMove(gameController.getLevel());
+        }
+
+
 
     }
 }

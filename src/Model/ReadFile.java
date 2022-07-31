@@ -12,18 +12,24 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ReadFile {
-    public void readFile() throws FileNotFoundException {
-        //Odczytuje linijka po linijce z pliku źródłowego
-        Scanner s = new Scanner(new File("C:/Programowanie/Task1/Words.txt"));
-        //dodaje do listy wyrazy z pliku
-        ArrayList<String> list = new ArrayList<>();
-        while (s.hasNext()) {
-            list.add(s.next());
+
+    public String readFile(int line) throws FileNotFoundException {
+
+        String word= new String();
+
+        try {
+            word = Files.readAllLines(Paths.get("C:/Programowanie/Task1/Words.txt")).get(line);
+
+        } catch (IOException e) {
+            System.out.println(e);
         }
-        s.close();
-        //sprawdzam czy działa i wyświetlam wszystko
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
+        return word;
+    }
+    public int howManyLines() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("C:/Programowanie/Task1/Words.txt"));
+        int lines = 0;
+        while (reader.readLine() != null) lines++;
+        reader.close();
+        return lines;
     }
 }

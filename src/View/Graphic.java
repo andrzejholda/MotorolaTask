@@ -15,15 +15,15 @@ public class Graphic {
 
     public  void printBoardEasyMode(){
         //tworzę tablice w konsoli łatwą
-        for(int i=1;i<3;i++){
+        for(int i=0;i<3;i++){
             System.out.print("|");
-            for(int j=1;j<5;j++){
+            for(int j=0;j<5;j++){
                 System.out.print(board[i][j]);
                 System.out.print("|");
             }
-            board[0][0]=null;
-            board[0][1]= String.valueOf(1);
-            board[1][1]=String.valueOf(2);
+            board[0][0]=" ";
+//            board[0][1]= String.valueOf(1);
+//            board[1][1]=String.valueOf(2);
             System.out.println();
         }
     }
